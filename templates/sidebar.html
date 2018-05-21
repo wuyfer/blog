@@ -1,0 +1,58 @@
+<aside id="sidebar">
+     <!--分类-->
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list">
+          {% for cate in category %}
+              <li class="category-list-item">
+                  <a class="category-list-link" href="/category/{{ cate.category }}">{{ cate.category__name }}</a>
+                  <span class="category-list-count">{{ cate.count }}</span>
+              </li>
+          {% endfor %}
+      </ul>
+      </div>
+  </div>
+
+     <!--归档-->
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list">
+          {% for arch in archive %}
+              <li class="archive-list-item">
+                  <a class="archive-list-link" href="/archive/{{ arch.0 }}/{{ arch.1 }}">{{ arch.0 }}-{{ arch.1 }}</a>
+                  <span class="archive-list-count">{{ arch.2}}</span>
+              </li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+          {% for rec in recent %}
+              <li>
+                <a href="/post/details/{{ rec.id }}">{{ rec.title }}</a>
+              </li>
+          {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+          <li>
+            <a href="http://www.bjsxt.com/" target="_blank">尚学堂</a>
+          </li>
+          <li>
+            <a href="http://www.sxt.cn/" target="_blank">速学堂</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</aside>
